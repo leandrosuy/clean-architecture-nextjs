@@ -1,40 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Clean Architecture Frontend Example
 
-## Getting Started
+Este é um exemplo de projeto frontend utilizando Clean Architecture. A Clean Architecture é um padrão de arquitetura de software que visa criar sistemas escaláveis, testáveis e sustentáveis, promovendo a separação de responsabilidades e a manutenção do código de forma mais fácil.
 
-First, run the development server:
+## Estrutura do Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O projeto é estruturado de acordo com os princípios da Clean Architecture, dividindo as responsabilidades em camadas bem definidas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `src` (Source Code)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **`components`**: Componentes React reutilizáveis.
+- **`domain`**: Lógica de negócios e regras de domínio.
+  - **`models`**: Definições de tipos e modelos.
+  - **`services`**: Serviços de domínio (por exemplo, serviços de autenticação, serviços de usuário).
+- **`pages`**: Páginas React correspondentes às rotas da aplicação.
+- **`presentation`**: Código relacionado à apresentação da interface do usuário.
+  - **`styles`**: Estilos globais e utilitários relacionados a estilos.
+- **`utils`**: Utilitários gerais e funções auxiliares.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Clean Architecture no Frontend
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+A Clean Architecture no frontend traz benefícios como:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Separação de Responsabilidades**: As responsabilidades são distribuídas em camadas (entidades, casos de uso, interface do usuário), facilitando a compreensão e manutenção do código.
 
-## Learn More
+2. **Testabilidade**: A lógica de negócios é mantida em camadas independentes, o que facilita a escrita de testes unitários e a realização de testes automatizados.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Manutenção Facilitada**: A estrutura permite a evolução do sistema sem alterar drasticamente o código existente, o que é especialmente útil em projetos de longo prazo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Reusabilidade de Código**: Componentes e lógica de negócios podem ser facilmente reutilizados em diferentes partes da aplicação.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. **Facilidade de Troca de Tecnologia**: A mudança na biblioteca/framework de UI não afeta diretamente a lógica de negócios, proporcionando maior flexibilidade.
 
-## Deploy on Vercel
+## Como Executar o Projeto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Instale as Dependências**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm install
+   ```
+
+2. **Execute o Projeto em Modo de Desenvolvimento**:
+
+   ```bash
+   npm run dev
+   ```
+
+   O projeto estará disponível em [http://localhost:3000](http://localhost:3000).
